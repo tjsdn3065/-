@@ -80,7 +80,7 @@ VERTEX* Path_Planning(string path_planning, Graph& G, int x_width, int y_width, 
 	VERTEX** map = G.GET_Map();
 	EDGE* E = G.Get_Edge();
 
-	Initialize_Single_Soure(path_planning, G, x_start, y_start);
+	Initialize_Single_Soure(path_planning, G, x_start, y_start, x_goal, y_goal);
 
 	VERTEX* S = new VERTEX[x_width * y_width];			// 확정된 정점 집합
 
@@ -103,7 +103,7 @@ VERTEX* Path_Planning(string path_planning, Graph& G, int x_width, int y_width, 
 			if (v_adj.state == STATE::FINISH || v_adj.state == STATE::OBSTACLE)		// 확정된 정점이거나 장애물이면 패스
 				continue;
 			else
-				Relax(path_planning, G, Q, v_adj, v_cur, E[i].w);
+				Relax(path_planning, G, Q, v_adj, v_cur, E[i].w,x_goal,y_goal);
 		}
 	}
 

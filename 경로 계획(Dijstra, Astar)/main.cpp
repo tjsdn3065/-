@@ -13,7 +13,7 @@ void Choice_Path_planning(string& path_planning)
 
 int main(void)
 {
-	const char* f_path = "5/map.txt";			// 파일 경로
+	const char* f_path = "4/map.txt";			// 파일 경로
 	const char* mode = "rt";					// 파일 개방 모드
 
 	string path_planning;
